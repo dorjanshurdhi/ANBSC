@@ -1,0 +1,4 @@
+controller:
+  name: jenkins-master
+  image: dorjanshurdhi/anbsc-jenkins
+  tag: 2.387.3-lts-jdk17

@@ -1,0 +1,32 @@
+nexus:
+  enabled: true
+  image:
+    repository: sonatype/nexus3
+    tag: 3.35.0
+    pullPolicy: IfNotPresent
+  persistence:
+    enabled: true
+    storageClass: default
+    size: 10Gi
+  service:
+    type: ClusterIP
+    port: 8085
+  ingress:
+    enabled: false
+    annotations: {}
+    pathType: ImplementationSpecific
+    hosts:
+      - nexus.example.com
+    tls: []
+  resources:
+    limits:
+      cpu: 1
+      memory: 2Gi
+    requests:
+      cpu: 500m
+      memory: 1Gi
+  nexusProxy:
+    enabled: false
+    httpProxy: ""
+    httpsProxy: ""
+    noProxy: ""
